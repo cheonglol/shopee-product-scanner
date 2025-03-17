@@ -1,0 +1,20 @@
+export enum APP_ERROR_CODE {
+  DATABASE_CONNECTION_ERROR = 1001,
+  DATABASE_QUERY_ERROR = 1002,
+  FILE_NOT_FOUND = 2001,
+  FILE_WRITE_ERROR = 2002,
+  INVALID_CONFIG = 3001,
+  MISSING_ENVIRONMENT_VARIABLE = 3002,
+  THIRD_PARTY_API_ERROR = 4001,
+  UNAUTHORIZED_ACCESS = 4002,
+  FORBIDDEN_ACCESS = 4003,
+  RESOURCE_NOT_FOUND = 4004,
+  VALIDATION_ERROR = 4005,
+  RATE_LIMIT_EXCEEDED = 4006,
+  UNKNOWN_ERROR = 9999, // A catch-all for unexpected errors
+}
+
+// TODO:
+export const constructResponseErrorMessage = (errorCode: APP_ERROR_CODE, message: string): string => {
+  return `ERROR CODE ${errorCode}, ${message}`;
+};
